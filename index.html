@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mini cinema to watch trailers of popular movies"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -48,9 +52,9 @@
             <div class="header__day">March 30</div>
           </div>
 
-          <div class="header__personal">
+          <a class="header__personal" href="#">
             <img src="img/avatar.png" alt="user autorization avatar" />
-          </div>
+          </a>
         </div>
       </header>
 
@@ -79,7 +83,10 @@
               <div class="aside__item-date">Dec 2022</div>
             </div>
 
-            <div class="button-play">
+            <div
+              data-src="https://www.youtube.com/embed/mqqft2x_Aa4"
+              class="button-play"
+            >
               <div></div>
               <div class="button-play__pause"></div>
             </div>
@@ -93,7 +100,10 @@
               <div class="aside__item-date">Dec 2022</div>
             </div>
 
-            <div class="button-play">
+            <div
+              data-src="https://www.youtube.com/embed/mqqft2x_Aa4"
+              class="button-play"
+            >
               <div></div>
               <div class="button-play__pause"></div>
             </div>
@@ -114,7 +124,7 @@
 
           <span class="aside__line"></span>
 
-          <div class="aside-footer">
+          <div class="aside__bottom-footer">
             <div class="aside__add">
               <div class="aside__add-plus">+</div>
               <span>Add your favourite genres</span>
@@ -127,6 +137,10 @@
             </div>
           </div>
         </div>
+
+        <a class="aside__close" href="#">
+          <img src="img/black-triangle.svg" alt="" />
+        </a>
       </aside>
 
       <!-- =============== MAIN =============== -->
@@ -139,7 +153,10 @@
               <div class="main-display__name">
                 <h1 class="main-display__header">Spider-Man: No Way Home</h1>
                 <div class="main-display__date">Feb 2021</div>
-                <div class="button-play main-display__button-play">
+                <div
+                  data-src="https://www.youtube.com/embed/V0hagz_8L3M"
+                  class="button-play main-display__button-play"
+                >
                   <div></div>
                   <div class="button-play__pause"></div>
                 </div>
@@ -170,7 +187,10 @@
                   <div class="trending__bg"></div>
                   <div class="trending__content">
                     <div class="trending__footer-left">
-                      <div class="button-play trending__button-play">
+                      <div
+                        data-src="https://www.youtube.com/embed/V0hagz_8L3M"
+                        class="button-play trending__button-play"
+                      >
                         <div></div>
                         <div class="button-play__pause"></div>
                       </div>
@@ -192,7 +212,10 @@
                   <div class="trending__bg"></div>
                   <div class="trending__content">
                     <div class="trending__footer-left">
-                      <div class="button-play trending__button-play">
+                      <div
+                        data-src="https://www.youtube.com/embed/V0hagz_8L3M"
+                        class="button-play trending__button-play"
+                      >
                         <div></div>
                         <div class="button-play__pause"></div>
                       </div>
@@ -229,7 +252,10 @@
                   <div class="popular__bg"></div>
                   <div class="popular__content">
                     <div class="popular__footer-left">
-                      <div class="button-play popular__button-play">
+                      <div
+                        data-src="https://www.youtube.com/embed/V0hagz_8L3M"
+                        class="button-play popular__button-play"
+                      >
                         <div></div>
                         <div class="button-play__pause"></div>
                       </div>
@@ -254,7 +280,10 @@
                   <div class="popular__bg"></div>
                   <div class="popular__content">
                     <div class="popular__footer-left">
-                      <div class="button-play popular__button-play">
+                      <div
+                        data-src="https://www.youtube.com/embed/V0hagz_8L3M"
+                        class="button-play popular__button-play"
+                      >
                         <div></div>
                         <div class="button-play__pause"></div>
                       </div>
@@ -279,7 +308,10 @@
                   <div class="popular__bg"></div>
                   <div class="popular__content">
                     <div class="popular__footer-left">
-                      <div class="button-play popular__button-play">
+                      <div
+                        data-src="https://www.youtube.com/embed/V0hagz_8L3M"
+                        class="button-play popular__button-play"
+                      >
                         <div></div>
                         <div class="button-play__pause"></div>
                       </div>
@@ -303,5 +335,21 @@
         </section>
       </main>
     </div>
+
+    <div class="modal">
+      <div class="modal__inner">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/V0hagz_8L3M"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
   </body>
 </html>

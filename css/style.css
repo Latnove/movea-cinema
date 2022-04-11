@@ -93,13 +93,32 @@ input {
     "aside main main"
     "aside main main";
   grid-template-columns: repeat(auto-fix, minmax(12rem, 1fr));
-  gap: 8rem 0;
+  gap: 3rem 0;
 }
 
 .grid-init {
   max-width: 1440px;
   margin: auto;
-  padding: 3rem 2.4rem 4rem;
+  padding: 0 2.4rem 4rem 0;
+}
+
+.header {
+  position: relative;
+  min-height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header::after {
+  content: "";
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  box-shadow: 0px 0.4rem 1rem rgba(255, 255, 255, 0.07);
 }
 
 .header__wrapper {
@@ -183,6 +202,10 @@ input {
   border-radius: 50%;
 }
 
+.main-display {
+  padding-top: 5rem;
+}
+
 .main-display__trailer {
   width: 98.5%;
   height: 20.2rem;
@@ -262,7 +285,7 @@ input {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  filter: blur(16px) brightness(0.3);
+  filter: blur(1.6rem) brightness(0.3);
   background-color: rgba(255, 255, 255, 0.75);
 }
 
@@ -303,7 +326,7 @@ input {
 }
 
 .title__right span {
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 114%;
   color: rgba(255, 255, 255, 0.2);
 }
@@ -347,18 +370,18 @@ input {
 .trending__bg,
 .popular__bg {
   position: absolute;
-  bottom: -1px;
+  bottom: -0.1rem;
   left: 50%;
   transform: translate(-50%);
   width: 102%;
   height: 100%;
   background: rgba(68, 68, 88, 0.75);
-  filter: blur(1px) brightness(0.32);
+  filter: blur(0.1rem) brightness(0.32);
 }
 
 .popular__bg {
   background: rgba(90, 90, 90, 0.75);
-  filter: blur(1px) brightness(0.32);
+  filter: blur(0.1rem) brightness(0.32);
 }
 
 .trending__content,
@@ -473,12 +496,34 @@ input {
 }
 
 .aside {
-  border-right: 2px solid #1c1b1f;
+  border-right: 0.2rem solid #1c1b1f;
   margin-right: 3.6rem;
+  padding-top: 5rem;
+  position: relative;
+  inset: 0;
+}
+
+.aside__close {
+  position: absolute;
+  top: 10.7rem;
+  right: -1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fcfcfe;
+  border-radius: 2rem;
+  width: 2.2rem;
+  height: 2.6rem;
+  cursor: pointer;
+}
+
+.aside__close img {
+  width: 1.4rem;
+  height: 0.86rem;
 }
 
 .aside__trailers {
-  padding-right: 2.3rem;
+  padding: 0 2.3rem 0 2.4rem;
 }
 
 .aside__title {
@@ -654,6 +699,38 @@ input {
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 114%;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  padding: 3rem 0;
+  display: none;
+  transition: all 0.4s;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal .modal__inner {
+  width: 50rem;
+  height: 30rem;
+  transition: all 0.4s;
+}
+
+.modal.active .modal__inner {
+  width: 90rem;
+  height: 55rem;
 }
 
 /* СЕТКА */
