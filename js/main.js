@@ -15,7 +15,38 @@ modalWindow.addEventListener("click", () => {
   youtubeVideo.src += "?enablejsapi=1";
 });
 
-const curTime = new Date().toLocaleTimeString().split(":");
-let timerValue = curTime.at(-1);
+const setDate = () => {
+  const curTime = new Date().toLocaleTimeString().split(":");
+  const curDay = new Date().toLocaleDateString().split(".");
+  dateEl.children[0].textContent = `${curTime[0]}:${curTime[1]}`;
+  dateEl.children[1].textContent = `${months[curDay[1] - 1]} ${curDay[0]}`;
+};
+
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+let timerValue = new Date().toLocaleTimeString().split(":").at(-1);
 timerValue = 60 - (timerValue[0] === "0" ? timerValue.at(-1) : timerValue);
-dateEl.children[0].textContent = `${curTime[0]}:${curTime[1]}`;
+setDate();
+
+const updateDate = () => {
+  let timer = setInterval(() => {
+    setDate();
+  }, 60 * 1000);
+};
+
+setInterval(() => {
+  setDate();
+  updateDate();
+}, timerValue * 1000);
